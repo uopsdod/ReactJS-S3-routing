@@ -23,6 +23,7 @@ create a S3 bucket and do the followings:
 
 ## Step07
 upload all files inside the /build folder after the npm build step to S3 bucket 
+make all those files public available 
 
 ## Step08 
 check the final result
