@@ -1,28 +1,49 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './index.css'
+import { Route, Link, BrowserRouter as Router, Redirect, Switch} from 'react-router-dom'
+import Users from './users'
+import Contacts from './contacts'
+import Home from './home'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+class MyRouting extends Component {
+
+  constructor(props){
+    super(props);
+    console.log("this.props.urlpath: ",this.props.urlpath);
   }
+
+  render() {
+    const whereToGo = "/" + this.props.urlpath;
+    let myRendering;
+       myRendering =             
+      <Router>
+        <div>
+        <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/users">Users</Link>
+            </li>
+            <li>
+              <Link to="/contacts">Contacts</Link>
+            </li>
+          </ul>           
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/users" component={Users} />
+            <Route path="/contacts" component={Contacts} />
+          </Switch>
+          {this.props.urlpath &&
+            <Redirect to={whereToGo} push />
+          }          
+        </div>
+      </Router>  
+
+		return (
+      myRendering
+		);
+	}	
 }
 
-export default App;
+export default MyRouting
