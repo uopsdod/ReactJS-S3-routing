@@ -7,8 +7,9 @@ git clone this project
 install Node.js 
 
 ## Step03 
-go to project and execute the following: 
-npm start
+go to project and execute the following commands:  
+npm install  
+npm start  
 
 ## Step04
 check if localhost:3000/ show the index.html page
