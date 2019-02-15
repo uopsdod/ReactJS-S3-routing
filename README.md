@@ -20,6 +20,19 @@ npm run-script build
 create a S3 bucket and do the followings: 
 * enable static hosting
 * remove restriction on public permissions on the bucket level
+* add the following policy to the redirection rule under teh static hosting tab: 
+```
+<RoutingRules>
+  <RoutingRule>
+    <Condition>
+      <HttpErrorCodeReturnedEquals>404</HttpErrorCodeReturnedEquals>
+    </Condition>
+    <Redirect>   
+      <ReplaceKeyPrefixWith>#/</ReplaceKeyPrefixWith>
+    </Redirect>
+  </RoutingRule>
+</RoutingRules>
+```
 
 ## Step07
 * upload all files inside the /build folder after the npm build step to S3 bucket 
