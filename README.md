@@ -14,7 +14,7 @@ npm start
 check if localhost:3000/ show the index.html page
 
 ## Step05
-npm build
+npm run-script build
 
 ## Step06 
 create a S3 bucket and do the followings: 
