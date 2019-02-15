@@ -21,7 +21,7 @@ npm run-script build
 create a S3 bucket and do the followings: 
 * enable static hosting
 * remove restriction on public permissions on the bucket level
-* add the following policy to the redirection rule under teh static hosting tab: 
+* add the following policy to the redirection rule under teh static hosting tab: ([Reference](http://aserafin.pl/2016/03/23/react-router-on-amazon-s3/).)
 ```
 <RoutingRules>
   <RoutingRule>
